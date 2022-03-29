@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./calculator.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="screen row-2"></section>
+      <section class="calc-btn row-8">
+        <div class="calc-btn-row">
+          <button class="col-5">C</button>
+          <button class="col-2">&larr;</button>
+          <button class="col-2 operator">&divide;</button>
+        </div>
+
+        <div class="calc-btn-row">
+          <button class="col-2">9</button>
+          <button class="col-2">8</button>
+          <button class="col-2">7</button>
+          <button class="col-2 operator">&times;</button>
+        </div>
+
+        <div class="calc-btn-row">
+          <button class="col-2">6</button>
+          <button class="col-2">5</button>
+          <button class="col-2">4</button>
+          <button class="col-2 operator">&minus;</button>
+        </div>
+
+        <div class="calc-btn-row">
+          <button class="col-2">3</button>
+          <button class="col-2">2</button>
+          <button class="col-2">1</button>
+          <button class="col-2 operator">&plus;</button>
+        </div>
+
+        <div class="calc-btn-row">
+          <button class="col-7">0</button>
+          <button class="col-2 operator">&equals;</button>
+        </div>
+      </section>
+    </div>
+    <script>
+      let btn = document.querySelectorAll('button')
+      let screen = document.querySelector('.screen')
+
+      window.onload=listenClick()
+
+      function listenClick() {
+          for(let i= 0; i < btn.length;i++){
+              btn[i].onclick = ()=>{
+                  screen.innerHTML += btn[i].innerHTML
+              }
+          }
+      }
+      
+    </script>
+  </body>
+</html>
